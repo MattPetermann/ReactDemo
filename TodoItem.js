@@ -1,4 +1,3 @@
-// the "list item" or individual todo item component
 class TodoItem extends React.Component {
     markCompleted = (event) => {
         this.props.onItemCompleted(this.props.id);
@@ -16,5 +15,3 @@ class TodoItem extends React.Component {
         );
     }
 }
-
-

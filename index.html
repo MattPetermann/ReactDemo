@@ -3,20 +3,23 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>React Todo List</title>
+
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
 		<link rel="stylesheet" href="style.css">
+
 		<script src="http://unpkg.com/react/umd/react.development.js"></script>
 		<script src="http://unpkg.com/react-dom/umd/react-dom.development.js"></script>
 		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-		<script src="https://unpkg.com/@material-ui/core/umd/material-ui.production.min.js" crossorigin="anonymous"></script>
+
+		<script src="https://unpkg.com/@material-ui/core/umd/material-ui.development.js"
+				crossorigin="anonymous"></script>
+
 		<script src="TodoApp.js" type="text/babel"></script>
 		<script src="TodoItem.js" type="text/babel"></script>
 		<script src="TodoList.js" type="text/babel"></script>
-		<script src="run.js" type="text/babel"></script>
+		<script src="index.js" type="text/babel"></script>
 	</head>
 	<body>
-		<div class="container-fluid">
-			<div id="app"></div>
-		</div>
+		<div id="root"></div>
 	</body>
 </html>

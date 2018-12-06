@@ -1,7 +1,3 @@
-//import React from 'react';
-//import Button from '@material-ui/core/Button';
-// the "app" component
-
 // Components let you split the UI into independent,
 // reusable pieces, and think about each piece in isolation.
 // Conceptually, components are like JavaScript functions.
@@ -63,19 +59,11 @@ class TodoApp extends React.Component {
         return (
             <div>
                 <h1>Todo List</h1>
-                    <div className="row">
-                        <div className="col-md-3">
-                        <TodoList items={this.state.items} onItemCompleted={this.markItemCompleted}/>
-                    </div>
-                </div>
-
+                <TodoList items={this.state.items} onItemCompleted={this.markItemCompleted} />
                 <form>
-                    <div>
-                        <input type="text" className="form-control" onChange={this.handleTextChange} value={this.state.newTodo} />
-                    </div>
-                    <div>
-                        <button variant="contained" color="primary" onClick={this.handleAddItem}>Add</button>
-                    </div>
+                    <input type="text" className="form-control" onChange={this.handleTextChange}
+                        value={this.state.newTodo} />
+                    <button variant="contained" color="primary" onClick={this.handleAddItem}>Add</button>
                 </form>
             </div>
         );
