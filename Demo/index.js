@@ -1,26 +1,22 @@
-// Components let you split the UI into independent,
-// reusable pieces, and think about each piece in isolation.
-// Conceptually, components are like JavaScript functions.
-// They accept arbitrary inputs (called “props”) and return
-// React elements describing what should appear on the screen.
-class TodoApp extends React.Component {
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
+class App extends React.Component {
     constructor(props) {
         super(props);
 
-        // similar to $scope in angular
         this.state = {
             items: [],
             newTodo: ""
         };
 
-        // bind "this" to the callback function when the object is created
         this.handleTextChange = this.handleTextChange.bind(this);
     }
 
-
     handleTextChange(event){
-        //this.state.newTodo = event.target.value;
-        this.setState({
+        this.setState ({
             newTodo: event.target.value
         });
     }
@@ -28,7 +24,6 @@ class TodoApp extends React.Component {
     handleAddItem = (event) => {
         event.preventDefault();
 
-        // create new todo
         var newItem = {
             id: Date.now(),
             text: this.state.newTodo,
@@ -63,9 +58,11 @@ class TodoApp extends React.Component {
                 <form>
                     <input type="text" className="form-control" onChange={this.handleTextChange}
                         value={this.state.newTodo} />
-                    <button variant="contained" color="primary" onClick={this.handleAddItem}>Add</button>
+                    <button onClick={this.handleAddItem}>Add</button>
                 </form>
             </div>
         );
     }
 }
+
+ReactDOM.render(<App />, document.getElementById('root'));
